@@ -1,108 +1,13 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #0f0f0f; /* لون أسود عميق مثل NodeVideo */
-            color: #ffffff;
-            font-family: 'Montserrat', 'Cairo', sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .en-title { font-size: 32px; font-weight: 700; letter-spacing: 1px; display: block; }
-        .ar-title { font-size: 20px; color: #888; font-weight: 400; display: block; margin-top: 10px; }
-
-        .gallery {
-            column-count: 2;
-            column-gap: 20px;
-            width: 100%;
-            max-width: 900px;
-        }
-
-        /* تنسيق البطاقات بأسلوب Pinterest */
-        .card {
-            background: #1a1a1a;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            padding: 20px;
-            break-inside: avoid;
-            border: 1px solid #2a2a2a;
-            transition: all 0.3s ease; /* سرعة الحركة */
-            cursor: pointer;
-        }
-
-        /* حركة عند مرور الماوس */
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #444;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            background: #222;
-        }
-
-        .card .en-sub { font-size: 18px; font-weight: 700; display: block; }
-        .card .ar-sub { font-size: 14px; color: #777; display: block; margin-top: 4px; }
-        
-        .tag {
-            font-size: 10px;
-            background: #333;
-            padding: 4px 8px;
-            border-radius: 5px;
-            color: #aaa;
-            display: inline-block;
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        /* تحسين العرض للجوال */
-        @media (max-width: 600px) {
-            .gallery { column-count: 1; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <span class="en-title">Visual Arts & Edits</span>
-        <span class="ar-title">الفنون البصرية والمونتاج</span>
+<div class="gallery">
+    <div class="card" onclick="openModal('pic1.jpg')">
+        <img src="pic1.jpg" alt="Work">
+        <span class="en-sub">Cinematic Edit</span>
+        <span class="ar-sub">مونتاج سينمائي</span>
     </div>
 
-    <div class="gallery">
-        <div class="card">
-            <span class="en-sub">Cinematic Motion</span>
-            <span class="ar-sub">حركة سينمائية</span>
-            <div class="tag">CapCut + NodeVideo</div>
-        </div>
-
-        <div class="card">
-            <span class="en-sub">Graphic Concept</span>
-            <span class="ar-sub">مفهوم جرافيكي</span>
-            <div class="tag">Design</div>
-        </div>
-
-        <div class="card" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
-            <span class="en-sub">Future Projects</span>
-            <span class="ar-sub">مشاريع مستقبلية</span>
-        </div>
-        
-        <div class="card">
-            <span class="en-sub">Wink Enhancements</span>
-            <span class="ar-sub">تحسينات وينك</span>
-            <div class="tag">AI Tools</div>
-        </div>
+    <div class="card" onclick="openModal('design.png')">
+        <img src="design.png" alt="Work">
+        <span class="en-sub">Graphic Concept</span>
+        <span class="ar-sub">تصميم جرافيكي</span>
     </div>
-
-</body>
-</html>
+</div>
