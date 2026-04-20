@@ -1,13 +1,71 @@
-<div class="gallery">
-    <div class="card" onclick="openModal('pic1.jpg')">
-        <img src="pic1.jpg" alt="Work">
-        <span class="en-sub">Cinematic Edit</span>
-        <span class="ar-sub">مونتاج سينمائي</span>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0b0b0b; color: white; font-family: 'Montserrat', 'Cairo', sans-serif; margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .en-title { font-size: 28px; font-weight: 700; display: block; letter-spacing: 2px; }
+        .ar-title { font-size: 18px; color: #777; display: block; margin-top: 5px; }
+
+        .gallery { column-count: 2; column-gap: 20px; width: 100%; max-width: 800px; }
+        .card { background: #161616; border-radius: 20px; margin-bottom: 20px; padding: 12px; break-inside: avoid; border: 1px solid #222; transition: 0.4s; cursor: pointer; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-8px); border-color: #555; background: #1c1c1c; }
+        .card img { width: 100%; border-radius: 15px; display: block; filter: grayscale(30%); transition: 0.4s; }
+        .card:hover img { filter: grayscale(0%); }
+        
+        .card-info { margin-top: 15px; padding: 5px; }
+        .en-sub { font-size: 16px; font-weight: 700; display: block; }
+        .ar-sub { font-size: 13px; color: #666; display: block; }
+
+        /* نافذة العرض (Modal) */
+        .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal img { max-width: 90%; max-height: 85%; border-radius: 10px; border: 2px solid #333; }
+        .close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <span class="en-title">AESTHETIC EDITS</span>
+        <span class="ar-title">تصاميم ومونتاج بصري</span>
     </div>
 
-    <div class="card" onclick="openModal('design.png')">
-        <img src="design.png" alt="Work">
-        <span class="en-sub">Graphic Concept</span>
-        <span class="ar-sub">تصميم جرافيكي</span>
+    <div class="gallery">
+        <div class="card" onclick="openModal('swan.png')">
+            <img src="swan.png" alt="Black and White Swan">
+            <div class="card-info">
+                <span class="en-sub">Dark Elegance</span>
+                <span class="ar-sub">فخامة داكنة</span>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('flower.png')">
+            <img src="flower.png" alt="Aesthetic Flower">
+            <div class="card-info">
+                <span class="en-sub">Floral Concept</span>
+                <span class="ar-sub">مفهوم الزهور</span>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("modalImg").src = src;
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
