@@ -3,71 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Creative Space</title>
+    <title>Creative Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ستايل بسيط يجمع بين Pinterest وتطبيقات المونتاج */
         body {
-            background-color: #121212; /* لون داكن مثل CapCut */
-            color: white;
-            font-family: sans-serif;
+            background-color: #0f0f0f; /* لون أسود عميق مثل NodeVideo */
+            color: #ffffff;
+            font-family: 'Montserrat', 'Cairo', sans-serif;
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        .bilingual-text {
-            margin-bottom: 20px;
-        }
+        .en-title { font-size: 32px; font-weight: 700; letter-spacing: 1px; display: block; }
+        .ar-title { font-size: 20px; color: #888; font-weight: 400; display: block; margin-top: 10px; }
 
-        .en { font-size: 24px; font-weight: bold; display: block; }
-        .ar { font-size: 18px; color: #aaaaaa; display: block; margin-top: 5px; }
-
-        /* حاوية الصور والفيديوهات بأسلوب Pinterest */
         .gallery {
-            column-count: 2; /* تقسيم الصفحة لعمودين */
-            column-gap: 15px;
+            column-count: 2;
+            column-gap: 20px;
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
         }
 
+        /* تنسيق البطاقات بأسلوب Pinterest */
         .card {
-            background: #1e1e1e;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            padding: 10px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
             break-inside: avoid;
-            border: 1px solid #333;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s ease; /* سرعة الحركة */
+            cursor: pointer;
         }
 
-        .card img, .card video {
-            width: 100%;
-            border-radius: 8px;
+        /* حركة عند مرور الماوس */
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #444;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #222;
+        }
+
+        .card .en-sub { font-size: 18px; font-weight: 700; display: block; }
+        .card .ar-sub { font-size: 14px; color: #777; display: block; margin-top: 4px; }
+        
+        .tag {
+            font-size: 10px;
+            background: #333;
+            padding: 4px 8px;
+            border-radius: 5px;
+            color: #aaa;
+            display: inline-block;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        /* تحسين العرض للجوال */
+        @media (max-width: 600px) {
+            .gallery { column-count: 1; }
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <span class="en">My Creative Portfolio</span>
-        <span class="ar">معرض أعمالي الإبداعية</span>
+        <span class="en-title">Visual Arts & Edits</span>
+        <span class="ar-title">الفنون البصرية والمونتاج</span>
     </div>
 
     <div class="gallery">
         <div class="card">
-            <span class="en">Video Edit #1</span>
-            <span class="ar">مونتاج فيديو رقم ١</span>
-            <p style="font-size: 12px; color: #777;">Made with CapCut & NodeVideo</p>
+            <span class="en-sub">Cinematic Motion</span>
+            <span class="ar-sub">حركة سينمائية</span>
+            <div class="tag">CapCut + NodeVideo</div>
         </div>
 
         <div class="card">
-            <span class="en">Aesthetic Design</span>
-            <span class="ar">تصميم جمالي</span>
+            <span class="en-sub">Graphic Concept</span>
+            <span class="ar-sub">مفهوم جرافيكي</span>
+            <div class="tag">Design</div>
+        </div>
+
+        <div class="card" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
+            <span class="en-sub">Future Projects</span>
+            <span class="ar-sub">مشاريع مستقبلية</span>
+        </div>
+        
+        <div class="card">
+            <span class="en-sub">Wink Enhancements</span>
+            <span class="ar-sub">تحسينات وينك</span>
+            <div class="tag">AI Tools</div>
         </div>
     </div>
 
